@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thalit - Search Your Favorite Recipe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <!-- Header with your background image -->
+    <header class="relative bg-cover bg-center text-white py-20 text-center" 
+            style="background-image: url('images/header-bg.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 container mx-auto px-4">
+            <div class="flex justify-center items-center mb-4">
+                <!-- তোমার লোগো (যদি না থাকে তাহলে এই লাইন কমেন্ট করো) -->
+                <img src="images/thalit-logo.png" alt="Thalit Logo" class="h-16 md:h-20 mr-4">
+                <h1 class="text-5xl font-bold">Thalit</h1>
+            </div>
+            <h2 class="text-4xl font-semibold mb-3">Search Your Favorite Recipe</h2>
+            <p class="text-xl opacity-90">Discover delicious recipes from around the world with simple ingredients.</p>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="container mx-auto px-4 py-12">
+        <form id="searchForm" class="max-w-xl mx-auto flex">
+            <input type="text" id="searchInput" 
+                   class="flex-1 p-4 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-orange-500" 
+                   placeholder="e.g. chicken, sushi, cake...">
+            <button type="submit" 
+                    class="bg-orange-500 text-white px-8 rounded-r-lg hover:bg-orange-600 transition">
+                Search
+            </button>
+        </form>
+    </div>
+
+    <!-- Recipes Grid -->
+    <section class="container mx-auto px-4 pb-16">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Featured Recipes</h2>
+        <div id="recipesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" 
+            class="fixed bottom-8 right-8 bg-orange-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-orange-600 hidden text-3xl z-50">
+        ↑
+    </button>
+
+    <!-- Recipe Details Modal -->
+    <div id="recipeModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-xl max-w-3xl w-11/12 max-h-[90vh] overflow-y-auto p-8 relative">
+            <button id="closeModal" class="absolute top-4 right-6 text-4xl text-gray-600 hover:text-black">×</button>
+            <h2 id="modalTitle" class="text-3xl font-bold mb-6"></h2>
+            <img id="modalImage" class="w-full h-72 object-cover rounded-lg mb-8" alt="Recipe">
+            <h3 class="text-2xl font-semibold mb-4">Ingredients</h3>
+            <ul id="modalIngredients" class="list-disc pl-6 mb-8"></ul>
+            <h3 class="text-2xl font-semibold mb-4">Instructions</h3>
+            <p id="modalInstructions" class="text-gray-700 leading-relaxed"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>© 2025 Thalit. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript - same folder -->
+    <script src="main.js"></script>
+</body>
+</html>

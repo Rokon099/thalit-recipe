@@ -1,0 +1,12 @@
+/* কিছু অতিরিক্ত স্টাইল যাতে সুন্দর দেখায় */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
